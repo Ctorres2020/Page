@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0 , minimun-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <title>Carga de imágenes</title>
+</head>
+<body background="fondo7.jpg">
+    <div class="container text-center">
+        <h3>OBSERVACIÓN: Solamente los chicos que están en <b>TERCERA, CUARTA, NOVENA Y DECIMA ETAPA</b> deben subir la foto de su certificado de bautismo Gracias!</h3>
+        <h4>Pasos a seguir:</h4>
+        <h5>
+            Paso 1: Sacar la foto del certificado desde el celular, antes de entrar al sitio.
+            Paso 2: Presionar el botón <br>Elegir archivo</br> y buscar en el almacenamiento del celular
+            Paso 3: Presionar abrir, se cargará la imágen luego darle cerrar y listo ya puede salir del sitio. Gracias por la paciencia.
+        </h5>
+        <progress value="0" max="100" id="progress-bar"></progress>
+        <form id="upload">
+            <input type="file" id="uploader" multiple>
+        </form>
+        <span id="progress-advance"></span>
+        <div id="output"></div>
+        
+      </div>
+    </div>
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--FIRESTORE-->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+    <script src="firebase1.js"></script>
+    <script src="app1.js"></script>
+</body>
+</html>

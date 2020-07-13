@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0 , minimun-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Registro v3.0</title>
+</head>
+<body background="fondo7.jpg">
+    
+    <div class="container mt-3">
+      <nav class="navbar navbar-light justify-content-between" style="background-color: #e3f2fd;">
+        <a class="navbar-brand">Equipo de catequesis</a>
+        <div class="form-inline" id="contenido1">
+          <p class="mb-0">
+              Inscripciones online
+            </p>
+        </div>
+      </nav>
+    </div>
+
+
+    <div id="contenido">
+      <div class="container mt-3">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Bienvenido!</h4>
+            <p>Sitio de uso exclusivo para registrar a los catequizandos de la Capilla San Francisco de Asís - Reducto.</p>
+            <hr>
+            <p class="mb-0">Por favor registrar todos los campos que se pide, cualquier consulta escribir a la pagina del facebook <br><a href="https://www.facebook.com/Capilla-San-Francisco-de-Asis-Reducto-293670937310613/">Capilla San Francisco de Asis (Reducto)</a></br>
+            </p>
+        </div>
+        <div class="alert alert-danger mt-3" role="alert">
+          Observación: Los niños/as y jóvenes, que se van a inscribir en <br>TERCERA, CUARTA Y NOVENA ETAPA</br>deben pasar la foto de su certificado de bautismo, haz click aqui --> <button><a href="https://capillasanfrancisco-reducto.000webhostapp.com/almacen.html" target="_blank" class="alert-link">Cargar imágen</a></button> Muchas gracias!!
+        </div>
+      </div>
+     
+    </div>
+
+
+    <div class="container mt-3" id="contenido2">
+      <button class="btn btn-warning my-2 my-sm-0" data-toggle="modal" data-target="#exampleModal">Registrar un chic@</button>
+      <button type="button" class="btn btn-warning" onclick="contar()">Ver cantidad</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Cargar datos</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+                <input type="text" id="capi" placeholder="A que capilla va?" class="form-control my-3" required>
+                <input type="text" id="nombre" placeholder="Nombre y Apellido" class="form-control my-3" required>
+                <input type="number" id="ci" placeholder="Número de cédula" class="form-control my-3" required>
+                <input type="text" id="fecha" placeholder="Fecha de nacimiento-01/01/1900" class="form-control my-3" required>
+                <select id="etapa" placeholder="Etapa" class="form-control my-3" required>
+                  <option>Elige una etapa</option>
+                  <option>Primera etapa (7 años)</option>
+                  <option>Segunda Etapa (8 años)</option>
+                  <option>Tercera Etapa (9 años)</option>
+                  <option>Cuarta Etapa (Primera comunión)</option>
+                  <option>Cavevi 1 (11 años)</option>
+                  <option>Cavevi 2 (12 años)</option>
+                  <option>Cavevi 3 (13 años)</option>
+                  <option>Cavevi 4 (14 años)</option>
+                  <option>Novena Etapa (Primer año de confirmación)</option>
+                  <option>Decima Etapa (Segundo año de confirmación)</option>
+                  <option>Tercer año (Este año hace confirmación)</option>
+                </select>
+                <input type="text" id="baus" placeholder="Bautizado SI-NO" class="form-control my-3">
+                <input type="text" id="comu" placeholder="Primera Comunión SI-NO" class="form-control my-3">
+                <input type="text" id="resp" placeholder="Nombre de mamá o papá" class="form-control my-3" required>
+                <input type="text" id="cel" placeholder="Celular de mamá o papá" class="form-control my-3" required>
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" id="boton" onclick="guardar()">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="container col-12 col-lg">
+        <table class="table my-3" id="tableta">
+          <thead>
+            <tr>
+                <th scope="col-12 col-lg">Capilla</th>
+                <th scope="col-12 col-lg">Nombre y Apellido</th>
+                <th scope="col-12 col-lg">N° cédula</th>
+                <th scope="col-12 col-lg">Fecha de nacimiento</th>
+                <th scope="col-12 col-lg">Etapas</th>
+                <th scope="col-12 col-lg">Bautizado/a</th>
+                <th scope="col-12 col-lg">Primera Comunión</th>
+                <th scope="col-12 col-lg">Responsable del chico/a</th>
+                <th scope="col-12 col-lg">Celular</th>
+                <th scope="col-12 col-lg">Editar</th>
+                <th scope="col-12 col-lg">Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="tabla">
+          </tbody>
+        </table>
+      </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--FIRESTORE-->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+    <script src="firebase1.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
