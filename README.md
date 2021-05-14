@@ -1,2 +1,2 @@
 # Página de registro
-# Trabajo para una Parroquia
+# Hecho con Bootstrap y Firebase
